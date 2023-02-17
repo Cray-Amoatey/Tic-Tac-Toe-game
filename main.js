@@ -12,6 +12,8 @@ const restartGameBtn = document.querySelector(".restartGameBtn");
 const cellWrapper = document.getElementById("cellWrapper");
 const cell = document.querySelectorAll('.cell')
 
+
+
 // modal display
 const modal = document.getElementById("modal");
 const endGameModal = document.getElementById('endGameModal')
@@ -60,9 +62,11 @@ PLAYER_O.setAttribute('src', 'assets/icon-o.svg')
 
 document.querySelector('.cell').appendChild(PLAYER_X)
 document.querySelector('.cell').appendChild(PLAYER_O)
-
-// PLAYER_X = ('img', 'assets/icon-x.svg')
-// PLAYER_O = ('img', 'assets/icon-o.svg')
+// let PLAYER_X = document.createElement('img')
+// PLAYER_X.src = 'assets/icon-x.svg';
+// cell.appendChild(PLAYER_X)
+// PLAYER_X = "X"
+// PLAYER_O = "O"
 
 let turn = PLAYER_X;
 
@@ -71,29 +75,50 @@ boardState.fill(null);
 
  cell.forEach((cell) => cell.addEventListener('click', cellClick))
 
+ function setHoverImage(){
+  // remove all hover text
+  cell.forEach(cell=>{
+    cell.classList.remove('hoverClassX');
+    cell.classList.remove('hoverClassO');
+
+
+    cell.forEach(cell =>{
+      if(cell.querySelector == ""){
+        cell.classList.add(hoveClass);
+      }
+    })
+  });
+  setHoverImage();
+
+
+
+ 
+  
+ 
+
+
  function cellClick(event) {
   if(endGameModal.classList.contains('visible')){
     return;
-    
   }
 
   const cell = event.target;
   const cellNumber = cell.dataset.index;
-  if(cell.divElementquerySelectorAll('img') != ""){
+  if(cell.querySelector('img') != ""){
     return;
-  }
+  } 
 
   if(turn === PLAYER_X){
-    cell.divElementquerySelectorAll('img') = PLAYER_X;
+    cell.querySelector('img') = PLAYER_X; 
     boardState[cellNumber] = PLAYER_X;
-    turn = PLAYER_O;
+    turn = PLAYER_O; 
   }
   else{
-    cell.divElementquerySelectorAll('img') = PLAYER_O;
+    cell.querySelector('img') = PLAYER_O;
     boardState[cellNumber]=PLAYER_O;
-    turn = PLAYER_X 
+    turn = PLAYER_X;  
   }
-
+ 
  }
 
 
