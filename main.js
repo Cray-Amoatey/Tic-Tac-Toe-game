@@ -29,6 +29,8 @@ const scoreX = document.getElementById("player1Name");
 const draw = document.getElementById("draw");
 const scoreO = document.getElementById("player2Name");
 
+
+
 let firstPlayer = "";
 
 let playersContainer = document.getElementById("players-container");
@@ -53,22 +55,31 @@ playerBtnContainer.addEventListener("click", (e) => {
 });
 
 
-const PLAYER_X = document.createElement('img')
-const PLAYER_O = document.createElement('img')
+// const PLAYER_X = document.createElement('img')
+// const PLAYER_O = document.createElement('img')
 
 // const PLAYER_X = cell.querySelectorAll('img')
 // const PLAYER_O = cell.querySelectorAll('img')
 
-PLAYER_X.setAttribute('src', 'assets/icon-x.svg')
-PLAYER_O.setAttribute('src', 'assets/icon-o.svg')
+// PLAYER_X.setAttribute('src', 'assets/icon-x.svg ')
+// PLAYER_O.setAttribute('src', 'assets/icon-o.svg ')
 
-document.querySelector('.cell').appendChild(PLAYER_X)
-document.querySelector('.cell').appendChild(PLAYER_O)
+
+// document.querySelector('.cell').appendChild(PLAYER_X)
+// document.querySelector('.cell').appendChild(PLAYER_O)
 // let PLAYER_X = document.createElement('img')
 // PLAYER_X.src = 'assets/icon-x.svg';
 // cell.appendChild(PLAYER_X)
 // PLAYER_X = "X"
 // PLAYER_O = "O"
+
+const divElement = document.querySelector('#myDiv')
+divElement.addEventListener('click', function(){
+  divElement.classList.add('PLAYER_X')
+})
+
+
+
 
 let turn = PLAYER_X;
 
@@ -81,30 +92,24 @@ boardState.fill(null);
  function setHoverImage() {
   // remove all hover text
   cell.forEach((cell)=> {
-    cell.classList.remove('PLAYER_X')
-    cell.classList.remove('PLAYER_O')
+    cell.classList.remove('hoverClassX')
+    cell.classList.remove('hoverClassO')
   });
 
-  cell.forEach((cell) => {
-    if (cell.querySelector ('PLAYER_X' || 
-    "PLAYER_O") == ""){
-      cell.classList.add(hoverClass)
+  cell.forEach((cell) => {   
+    if (cell.querySelector ('img') == ""){
+      cell.classList.add(hoverClass);
     }
-  })
+  });
 }
 
+
+
  
 
 
 
-//     cell.forEach((cell => {
-//       if (cell.querySelector == ""){
-//         cell.classList.add(hoveClass);
-//       }
-//     })
-//   });
- 
-//   setHoverImage();
+
 
 
 
@@ -120,7 +125,7 @@ boardState.fill(null);
 
   const cell = event.target;
   const cellNumber = cell.dataset.index;
-  if(cell.querySelector('img') != ""){
+  if(cell.querySelector('PLAYER_X' || 'PLAYER_O') != ""){
     return;
   } 
 
@@ -134,7 +139,8 @@ boardState.fill(null);
     boardState[cellNumber]=PLAYER_O;
     turn = PLAYER_X;  
   }
- 
+
+  setHoverImage();
  }
 
 
