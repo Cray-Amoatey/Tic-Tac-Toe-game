@@ -197,7 +197,7 @@ body {
 }
 
 #gameBoard {
-    display: none;
+    /* display: none; */
 }
 
 .game-board-header {
@@ -245,11 +245,11 @@ body {
 }
 
 /* click active state */
-.restartgameBtn:active {
+.restartGameBtn:active {
     transform: translateY(2px);
 }
 
-.restartgameBtn:hover {
+.restartGameBtn:hover {
     cursor: pointer;
 }
 
@@ -272,12 +272,14 @@ body {
     box-shadow: inset 0px -8px 0px #10212a;
     border-radius: 10px;
     width: 6rem;
-    height: 6rem;
-    transform: translateY(2px);
+    height: 6rem; 
 }
 
-:hover.cell {
-    cursor: pointer;
+.cell:hover {
+    cursor: pointer; 
+}
+.cell:active{
+    transform: translateY(4px);
 }
 
 /* score display */
@@ -484,16 +486,16 @@ body {
 
 
 /* playerMarkImage */
-  /* .hoverClassX:hover  {
+   /* .hoverClassX:hover  {
     background-image: url(./assets/icon-x-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
-} 
-.hoverClassO:hover{
+}  */
+ .hoverClassO:hover{
     background-image: url(/assets/icon-o-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
-} */
+} 
 
 .PLAYER_X {
     background-image: url(/assets/icon-x.svg);
