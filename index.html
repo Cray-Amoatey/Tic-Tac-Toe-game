@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./main.js" defer></script>
   </head>
   <body>
     <main>
@@ -75,13 +76,14 @@
             <p>remember: x goes first</p>
           </div>
           <div id="playerBtnContainer">
-              <button id="cpuBtn" class="cpuBtn">New Game (vs CPU)
-          </button>
-          <button id="playerBtn" class="playerBtn" >
-            New Game (vs player)
-          </button>
+            <button id="cpuBtn" class="Cpubtn">
+              New Game (vs CPU)
+            </button>
+            <button id="playerBtn" class="playerBtn">
+              New Game (vs player)
+            </button>
           </div>
-        
+
           <p id="demo"></p>
         </div>
       </section>
@@ -89,25 +91,35 @@
       <section id="gameBoard" class="gameboard">
         <div class="gameboard-wrapper">
           <div class="game-board-header">
-            <img class="game-board-header-logo" src="./assets/logo.svg" alt="logo" />
+            <img
+              class="game-board-header-logo"
+              src="./assets/logo.svg"
+              alt="logo"
+            />
             <button class="turn">
-              <img id="playerTurnIndicator" class="Xturn" src="assets/icon-o-turn.svg" alt="X icon" data-value="X" />
+              <img
+                id="playerTurnIndicator"
+                class="Xturn"
+                src="assets/icon-o-turn.svg"
+                alt="X icon"
+                data-value="X"
+              />
               <!-- <p class="fs-500 uppercase">turn</p> -->
             </button>
-            <button class="restartGameBtn" onclick="displayModalRestart()">
+            <button class="restartGameBtn">
               <img src="./assets/icon-restart.svg" alt="restart icon" />
             </button>
           </div>
           <div class="cell-wrapper" id="cellWrapper">
-            <div  data-index="0"  class="cell"></div>
-            <div  data-index="1"  class="cell"></div>
-            <div  data-index="2"  class= "cell"></div>
-            <div  data-index="3"  class="cell"></div>
-            <div  data-index="4"  class="cell"></div>
-            <div  data-index="5"  class="cell"></div>
-            <div  data-index="6"  class="cell"></div>
-            <div  data-index="7"  class="cell"></div>
-            <div  data-index="8"  class="cell"></div>
+            <div data-index="0" class="cell"></div>
+            <div data-index="1" class="cell"></div>
+            <div data-index="2" class="cell"></div>
+            <div data-index="3" class="cell"></div>
+            <div data-index="4" class="cell"></div>
+            <div data-index="5" class="cell"></div>
+            <div data-index="6" class="cell"></div>
+            <div data-index="7" class="cell"></div>
+            <div data-index="8" class="cell"></div>
           </div>
 
           <div class="scores fs-500 uppercase text-dark">
@@ -176,8 +188,7 @@
         </div>
       </section>
 
-      <div id="cpuThink" class="cpuThink"> <p id="cpuThinkMessage"></p> </div>
+      <div id="cpuThink" class="cpuThink"><p id="cpuThinkMessage"></p></div>
     </main>
-    <script type="module" src="main.js"></script>
   </body>
 </html>
