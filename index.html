@@ -96,16 +96,16 @@
               src="./assets/logo.svg"
               alt="logo"
             />
-            <button class="turn">
-              <img
+            <div class="turn" id="turnIndicator">
+              <span class="turn-text"> <img
                 id="playerTurnIndicator"
                 class="Xturn"
-                src="assets/icon-o-turn.svg"
+                src="assets/icon-x-turn.svg"
                 alt="X icon"
-                data-value="X"
-              />
-              <!-- <p class="fs-500 uppercase">turn</p> -->
-            </button>
+              /><p class="text">TURN</p> </span>
+             
+                
+            </div>
             <button class="restartGameBtn">
               <img src="./assets/icon-restart.svg" alt="restart icon" />
             </button>
@@ -187,8 +187,6 @@
           </div>
         </div>
       </section>
-
-      <div id="cpuThink" class="cpuThink"><p id="cpuThinkMessage"></p></div>
     </main>
   </body>
 </html>

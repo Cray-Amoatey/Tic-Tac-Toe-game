@@ -19,7 +19,7 @@ body {
     height: 471px;
     background-color: #1A2A33;
     margin-top: 215px;
-    margin-left: 490px; 
+    margin-left: 490px;
 }
 
 
@@ -196,10 +196,11 @@ body {
 }
 
 .gameboard-wrapper {
-     margin-left: 490px; 
+    margin-left: 490px;
     margin-top: 100px;
 }
-#gameBoard{
+
+#gameBoard {
     display: none;
 }
 
@@ -233,7 +234,15 @@ body {
 .turn img {
     width: 20px;
     height: 20px;
-    margin-right: 90px;
+}
+
+.turn-text {
+
+    display: inline-flex;
+    font-weight: 700;
+    margin-left: 25%;
+    color: #A8BFC9;
+    margin-top: 10%;
 }
 
 
@@ -276,13 +285,14 @@ body {
     box-shadow: inset 0px -8px 0px #10212a;
     border-radius: 10px;
     width: 6rem;
-    height: 6rem; 
+    height: 6rem;
 }
 
 .cell:hover {
-    cursor: pointer; 
+    cursor: pointer;
 }
-.cell:active{
+
+.cell:active {
     transform: translateY(4px);
 }
 
@@ -490,16 +500,16 @@ body {
 
 
 /* playerMarkImage */
-   /* .hoverClassX:hover  {
+/* .hoverClassX:hover  {
     background-image: url(./assets/icon-x-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
 }  */
- .hoverClassO:hover{
+.hoverClassO:hover {
     background-image: url(/assets/icon-o-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
-} 
+}
 
 .PLAYER_X {
     background-image: url(/assets/icon-x.svg);
@@ -527,4 +537,3 @@ body {
 /* .cell::before{
     content: url(./assets/icon-o.svg);
 } */
-
