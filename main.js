@@ -69,8 +69,7 @@ boardState.fill(null);
   let turn = PLAYER_X
 cell.forEach((cell) => cell.addEventListener("click", cellClick));
 
- cell = Event.target;
- const cellNumber = cell.dataset.index; 
+
  
 
  if (XradioBtn.checked === true){
@@ -79,5 +78,5 @@ cell.forEach((cell) => cell.addEventListener("click", cellClick));
   turn = PLAYER_O;
 
  }
-
+console.log("data")
 
