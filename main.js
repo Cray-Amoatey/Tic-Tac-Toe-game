@@ -14,7 +14,7 @@ const playerTurnIndicator = document.getElementById("playerturnIndicator");
 const turnIndicator = document.getElementById("turnIndicator")
 const restartGameBtn = document.querySelector(".restartGameBtn");
 const cellWrapper = document.getElementById("cellWrapper");
-const cell = document.querySelectorAll(".cell");
+const cell = document.querySelector(".cell");
 
 // modal display
 const modal = document.getElementById("modal");
@@ -46,6 +46,9 @@ document.querySelector('.cell').appendChild(PLAYER_O)
 // const boardState = Array(cell.length);
 // boardState.fill(null);
 
+let boardState = Array.from(Array(9).keys())
+let X_pattern = [];
+let O_pattern = [];
 let humanPlayer;
 let cpuPlayer;
 
@@ -90,19 +93,78 @@ const win_pattern = [
   scoreO.textContent = "O (P2)"
   playerBtn.setAttribute("data-value" , "active")
   cpuBtn.setAttribute("data-value" , "")
- })
-
- 
- function boardState(cell) {
-  let selectedCell = document.querySelector(`[data-index = "${cell}"]`)
-  let img = document.createElement('img');
+ });
 
 
 
- }
 
 
 
+
+function selectedCell(cell) {
+  let cellChoice = document.querySelector(`[data-index="${cell}"]`);
+  let img = document.createElement("img");
+
+  if (playerTurnIndicator.getAttribute("data-value") === "X") {
+    img.src = "./assets/icon-x.svg";
+    img.setAttribute("class", "cellPlayed");
+    cellChoice.appendChild(img);
+    cellChoice.classList.remove("hoverClassO");
+    cellChoice.setAttribute("data-value", "X")
+
+    playerTurnIndicator.setAttribute("data-value", "O")
+    playerTurnIndicator.src = "./assets/icon-o-turn.svg";
+    X_pattern.push(parseInt(cellChoice.id, 10));
+    X_pattern.sort();
+    if (XradioBtn.checked === true) {
+      boardState.splice(
+        parseInt(cellChoice.id, 10),
+        1,
+        (parseInt(cellChoice.id, 10),humanPlayer)
+      );
+    }else {
+      boardState.splice(
+        parseInt (cellChoice.id, 10),
+        1,
+        (parseInt(cellChoice.id, 10), cpuPlayer)
+      );
+    }
+    for (emptuy of allCell) {
+      if (empty.getAttribute('data-value') === ""){
+        empty.classList.add("hoverClassO");
+        empty.classList.remove("hoverClassX");
+      }
+    }
+    checkWin (X_pattern);
+  }else{
+    img.src = "./assets/icon-o.svg";
+    img.setAttribute("class", "cellplayed");
+    cellChoice.appendChild(img);
+    cellChoice.classList.remove('hoverClassO');
+    
+    playerTurnIndicator.setAttribute("data-value", "X");
+    playerTurnIndicator.src = "./assets/icon-x-turn.svg";
+    O_pattern.push(parseInt(cellChoice.id,10));
+    O_pattern.sort();
+    if (OradioBtn.checked === true) {
+      boardState.splice(
+        parseInt(cellChoice.id,10),
+        1,
+        (parseInt(cellChoice.id, 10), humanPlayer)
+      );
+    } else{
+      boardState.splice(
+        parseInt(cellChoice.id, 10),
+        1,
+        (parseInt(cellChoice.id, 10), cpuPlayer)
+      );
+    }
+    
+  }
+  // add code for other player's turn
+  return cellChoice;
+  
+}
 
 
  
