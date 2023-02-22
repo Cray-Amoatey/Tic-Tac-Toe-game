@@ -35,48 +35,78 @@ const scoreO = document.getElementById("player2Name");
 let PLAYER_X = document.createElement('img')
 let PLAYER_O = document.createElement('img')
 PLAYER_X.setAttribute('src', './assets/icon-x.svg')
-PLAYER_O.setAttribute('src', './assets/icon/-o.svg')
-// document.getElementsByClassName('cell').appendChild("PLAYER_X")
-
-
-// let PLAYER_X = '<img src= "assets/icon-x.svg">';
-// let PLAYER_O = '<img src="assets/icon-o.svg">';
-
-let humanPlayer
-let cpuPlayer
-
-const boardState = Array(cell.length);
-boardState.fill(null);
+PLAYER_O.setAttribute('src', './assets/icon-o.svg')
+document.body.appendChild(PLAYER_X)
+document.querySelector('.cell').appendChild(PLAYER_O)
 
 
 
+
+
+// const boardState = Array(cell.length);
+// boardState.fill(null);
+
+let humanPlayer;
+let cpuPlayer;
+
+
+const win_pattern = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
+
+// singlePlayerButton
   cpuBtn.addEventListener("click", () => {
     gameMenu.style.display = "none";
     gameBoard.style.display = "initial";
     if (XradioBtn.checked === true ) { 
-      scoreX.textContent = "JIGGYCRAY"; 
-      humanPlayer.img = PLAYER_X
-      cpuPlayer.img = PLAYER_O
+      humanPlayer = PLAYER_X
+      cpuPlayer = PLAYER_O 
+      scoreX.textContent = "X (You)";  
+      scoreO.textContent = "O (CPU)"
     }
     else if (OradioBtn.checked === true){ 
       humanPlayer = PLAYER_O
       cpuPlayer = PLAYER_X
-      scoreO.textContent = "MOON"
+      scoreX.textContent = "X (CPU)"
+      scoreO.textContent = "O (You)"
     }
-
   });
 
-  let turn = PLAYER_X
-cell.forEach((cell) => cell.addEventListener("click", cellClick));
+ cpuBtn.setAttribute("data-value", "active");
+ playerBtn.setAttribute("data-value", "");
+
+ playerBtn.addEventListener('click' , () =>{
+  gameMenu.style.display = "none"
+  gameBoard.style.display = "initial";
+  scoreX.textContent = "X (P1)"
+  scoreO.textContent = "O (P2)"
+  playerBtn.setAttribute("data-value" , "active")
+  cpuBtn.setAttribute("data-value" , "")
+ })
+
+ 
+ function boardState(cell) {
+  let selectedCell = document.querySelector(`[data-index = "${cell}"]`)
+  let img = document.createElement('img');
+
+
+
+ }
+
+
+
 
 
  
+ 
 
- if (XradioBtn.checked === true){
-  cell.innerText = PLAYER_X;
-  boardState[cellNumber] = PLAYER_X 
-  turn = PLAYER_O;
 
- }
-console.log("data")
-
+ 

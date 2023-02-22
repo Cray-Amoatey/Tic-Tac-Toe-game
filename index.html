@@ -76,10 +76,10 @@
             <p>remember: x goes first</p>
           </div>
           <div id="playerBtnContainer">
-            <button id="cpuBtn" class="Cpubtn">
+            <button id="cpuBtn" class="Cpubtn" data-value = "">
               New Game (vs CPU)
             </button>
-            <button id="playerBtn" class="playerBtn">
+            <button id="playerBtn" class="playerBtn" data-value = " ">
               New Game (vs player)
             </button>
           </div>
@@ -101,7 +101,7 @@
                 id="playerTurnIndicator"
                 class="Xturn"
                 src="assets/icon-x-turn.svg"
-                alt="X icon"
+                alt="X icon" data-value="X"
               /><p class="text">TURN</p> </span>
              
                 
@@ -124,14 +124,14 @@
 
           <div class="scores fs-500 uppercase text-dark">
             <div class="cell-score your-score">
-              <p id="player1Name" class="fs-500 uppercase text-dark">X (You)</p>
-              <p id="Xscore" class="fs-800">0</p>
+              <p id="player1Name" class="scoretext uppercase text-dark">X (You)</p>
+              <p id="Xscore" class="s">0</p>
             </div>
-            <div class="cell-score ties">
-              <p>Ties<br /><span id="draw" class="fs-800">0</span></p>
+            <div class="cell-score  ties">
+              <p>Ties<br /><span id="draw" class="">0</span></p>
             </div>
             <div class="cell-score cpu-score">
-              <p id="player2Name" class="fs-500 uppercase text-dark">O (CPU)</p>
+              <p id="player2Name" class="scoretext uppercase text-dark">O (CPU)</p>
               <p id="Oscore" class="fs-800">0</p>
             </div>
           </div>
